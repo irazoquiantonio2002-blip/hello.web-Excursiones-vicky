@@ -655,7 +655,8 @@ section {
 }
 
 #why,
-#producto {
+#producto,
+#flyers {
   background:
     radial-gradient(circle at 10% 20%, rgba(25,231,247,0.1), transparent 26%),
     linear-gradient(180deg, #ffffff, #f7fcff);
@@ -1040,6 +1041,104 @@ section {
 .pb-br { right: 22px; bottom: 22px; }
 
 /* Stats */
+/* Flyers */
+.flyers-hdr {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.flyers-hdr .label {
+  justify-content: center;
+}
+
+.flyers-hdr .section-lead {
+  color: var(--gray);
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.flyer-block {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: 54px;
+  align-items: center;
+}
+
+.flyer-block + .flyer-block {
+  margin-top: 64px;
+}
+
+.flyer-reverse .flyer-media {
+  order: 2;
+}
+
+.flyer-reverse .flyer-copy {
+  order: 1;
+}
+
+.flyer-media {
+  padding: 14px;
+  background: linear-gradient(160deg, #07121d, #112235);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.flyer-media img {
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 4px);
+}
+
+.flyer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--cyan));
+  color: var(--ink);
+  font-size: 22px;
+}
+
+.flyer-copy h3 {
+  margin: 0 0 14px;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 900;
+}
+
+.flyer-copy > p {
+  margin: 0 0 22px;
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.flyer-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.flyer-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.flyer-list li i {
+  color: var(--green);
+}
+
 #stats {
   padding: 72px 0;
   color: #fff;
@@ -1465,6 +1564,21 @@ footer {
   .contact-box,
   .footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .flyer-block {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .flyer-block .flyer-media {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .flyer-reverse .flyer-media,
+  .flyer-reverse .flyer-copy {
+    order: unset;
   }
 
   .features-grid,
